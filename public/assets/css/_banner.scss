@@ -1,0 +1,30 @@
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    .bg{
+        position: absolute;
+        z-index: -1;
+        right: -20px;
+        @media (max-width: 768px) {
+            top: 0;
+        }
+    }
+    .details{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 567px;
+        h1{
+            position: relative;
+            font-family: var(--ff-primary);
+            font-size: 64px;
+            color: var(--clr-primary-500);
+            @media (max-width: 768px) {
+                font-size: 45px;
+            }
+        }
+    }
+}

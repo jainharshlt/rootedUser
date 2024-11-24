@@ -1,0 +1,40 @@
+{
+  "homepaage": "https://rahuljadhav85.github.io/rooted",
+  "name": "rooted",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@progress/kendo-date-math": "^1.5.13",
+    "@react-oauth/google": "^0.12.1",
+    "aos": "^2.3.4",
+    "axios": "^1.7.2",
+    "bootstrap": "^5.3.3",
+    "formik": "^2.4.6",
+    "gh-pages": "^6.1.1",
+    "moment": "^2.30.1",
+    "next": "^14.2.14",
+    "react": "^18",
+    "react-bootstrap": "^2.10.2",
+    "react-date-range": "^2.0.1",
+    "react-datepicker": "^6.9.0",
+    "react-dom": "^18",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.2.2",
+    "react-multi-date-picker": "^4.5.2",
+    "react-otp-input": "^3.1.1",
+    "react-sticky-el": "^2.1.1",
+    "react-textra": "^0.2.0",
+    "react-toastify": "^10.0.5",
+    "styled-components": "^6.1.11",
+    "swiper": "^11.1.1",
+    "yup": "^1.4.0"
+  }
+}
