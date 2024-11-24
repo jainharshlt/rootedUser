@@ -15,7 +15,7 @@ const Page = () => {
     // const router = useRouter();
     // const { id } = router.query;
     const [id, setId] = useState(null); // Dynamically fetch ID
-
+    console.log(id, "state id")
     const [subscriptionData, setSubscriptionData] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedDates, setSelectedDates] = useState([]);
@@ -28,11 +28,10 @@ const Page = () => {
     const [showdisableDate, setShowDisableDate] = useState([])
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
             const params = new URLSearchParams(window.location.search);
             const id = params.get("id");
+            console.log(id)
             setId(id);
-        }
     }, []);
 
     useEffect(() => {
@@ -45,7 +44,7 @@ const Page = () => {
     useEffect(() => {
         getHolidays();
         fetchData();
-    }, []);
+    }, [id]);
 
     useEffect(() => { }, [holidays, selectedDates, subscriptionData, subsDate, disableDate]);
 
@@ -60,7 +59,7 @@ const Page = () => {
                 setHolidays(holi_arr);
             }
         } catch (error) {
-            // Handle error
+            console.log(error)
         }
     };
 
@@ -72,6 +71,7 @@ const Page = () => {
         const token = localStorage.getItem('token');
         if (token !== '') {
             try {
+                console.log(id, "7777777777765433333")
                 const response = await axiosInstance.get(`/show-billing-history/${id}`);
 
                 if (response.data.data) {
