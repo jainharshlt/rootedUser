@@ -9,13 +9,9 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { addDays } from '@progress/kendo-date-math';
 import { Calendar } from 'react-date-range';
-// import { useRouter } from 'next/router';
 
 const Page = () => {
-    // const router = useRouter();
-    // const { id } = router.query;
-    const [id, setId] = useState(null); // Dynamically fetch ID
-    console.log(id, "state id")
+    const [id, setId] = useState(null);
     const [subscriptionData, setSubscriptionData] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedDates, setSelectedDates] = useState([]);
@@ -24,14 +20,13 @@ const Page = () => {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [subsDate, setSubsDate] = useState('');
-    const [disableDate, setDisableDate] = useState([])
-    const [showdisableDate, setShowDisableDate] = useState([])
+    const [disableDate, setDisableDate] = useState([]);
+    const [showdisableDate, setShowDisableDate] = useState([]);
 
     useEffect(() => {
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get("id");
-            console.log(id)
-            setId(id);
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+        setId(id);
     }, []);
 
     useEffect(() => {
@@ -71,7 +66,6 @@ const Page = () => {
         const token = localStorage.getItem('token');
         if (token !== '') {
             try {
-                console.log(id, "7777777777765433333")
                 const response = await axiosInstance.get(`/show-billing-history/${id}`);
 
                 if (response.data.data) {
