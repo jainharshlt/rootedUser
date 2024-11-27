@@ -54,7 +54,7 @@ const Footer = () => {
                                         <div className="linkWrapper">
                                             <Link href="/#whyRooted" className="singleLink">Why Rooted</Link>
                                             <Link href="/aboutus" className="singleLink">About us</Link>
-                                            <Link href="#" className="singleLink">Contact Us</Link>
+                                            <Link href="/corporate?contact" className="singleLink">Contact Us</Link>
                                             <Link href="/login" className="singleLink">Login</Link>
 
                                         </div>
