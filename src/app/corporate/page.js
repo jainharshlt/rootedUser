@@ -20,12 +20,14 @@ const page = () => {
     });
     useEffect(() => {
         AOS.init({
-            // initialise with other settings
             duration: 800
         });
         AOS.refresh();
-        if (window.location.search === "?contact") {
-            formSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("contact")) {
+            setTimeout(() => {
+                formSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 300);
         }
     }, []);
 
